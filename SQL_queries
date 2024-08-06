@@ -1,0 +1,175 @@
+CREATE TABLE states (
+    state_id INT PRIMARY KEY,
+    state_name VARCHAR(50) NOT NULL UNIQUE
+);
+
+INSERT INTO states (state_id, state_name) VALUES 
+(1, 'Alabama'),
+(2, 'Alaska'),
+(3, 'Arizona'),
+(4, 'Arkansas'),
+(5, 'California'),
+(6, 'Colorado'),
+(7, 'Connecticut'),
+(8, 'Delaware'),
+(9, 'Florida'),
+(10, 'Georgia'),
+(11, 'Hawaii'),
+(12, 'Idaho'),
+(13, 'Illinois'),
+(14, 'Indiana'),
+(15, 'Iowa'),
+(16, 'Kansas'),
+(17, 'Kentucky'),
+(18, 'Louisiana'),
+(19, 'Maine'),
+(20, 'Maryland'),
+(21, 'Massachusetts'),
+(22, 'Michigan'),
+(23, 'Minnesota'),
+(24, 'Mississippi'),
+(25, 'Missouri'),
+(26, 'Montana'),
+(27, 'Nebraska'),
+(28, 'Nevada'),
+(29, 'New Hampshire'),
+(30, 'New Jersey'),
+(31, 'New Mexico'),
+(32, 'New York'),
+(33, 'North Carolina'),
+(34, 'North Dakota'),
+(35, 'Ohio'),
+(36, 'Oklahoma'),
+(37, 'Oregon'),
+(38, 'Pennsylvania'),
+(39, 'Rhode Island'),
+(40, 'South Carolina'),
+(41, 'South Dakota'),
+(42, 'Tennessee'),
+(43, 'Texas'),
+(44, 'Utah'),
+(45, 'Vermont'),
+(46, 'Virginia'),
+(47, 'Washington'),
+(48, 'West Virginia'),
+(49, 'Wisconsin'),
+(50, 'Wyoming'),
+(51, 'Washington D.C.');
+
+CREATE TABLE US_Sports_Betting_Per_State (
+  market VARCHAR(50), 
+  handle BIGINT, 
+  revenue BIGINT, 
+  hold FLOAT, 
+  taxes BIGINT 
+);
+
+CREATE TABLE total_US_Sports_Betting_Per_Month (
+  market VARCHAR(50),
+  month DATE, 
+  handle BIGINT, 
+  revenue BIGINT, 
+  hold FLOAT, 
+  taxes BIGINT 
+);
+
+CREATE TABLE total_US_Sports_Betting_Per_State_Per_Month (
+  market VARCHAR(50),
+  month DATE, 
+  handle BIGINT, 
+  revenue BIGINT, 
+  hold FLOAT, 
+  taxes BIGINT 
+);
+
+CREATE TABLE connecticut_Sports_Betting_Per_State_Per_Month (
+  market VARCHAR(50),
+  licensee VARCHAR(50),
+  fiscal_year DATE,
+  month_ending DATE,
+  wagers BIGINT,
+  patron_winnings BIGINT,
+  cancelled_wagers BIGINT,
+  monthly_resettlements INT,
+  online_sports_wagering_win_loss BIGINT,
+  federal_excercise_tax BIGINT,
+  unadjusted_monthly_gaming_revenue BIGINT,
+  promotional_coupons_or_credits_wagered INT,
+  promotional_deduction INT,
+  total_gross_gaming_revenue INT,
+  payment INT 
+);
+
+CREATE TABLE us_economic_data (
+  date DATE,
+  unrate_percentage INT,
+  consumer_conf_index INT,
+  ppi_const_mat INT,
+  cpi_all_items INT,
+  inflation_percentage INT,
+  mortgage_ont_monthly_avg_percentage INT,
+  med_household_income INT,
+  corp_bond_yield INT,
+  monthly_home_supply INT,
+  percent_share_of_working_population INT,
+  gdp_per_capita INT,
+  quarterly_real_gdp INT,
+  quarterly_gdp_growth_rate INT,
+  csushpisa INT 
+);
+
+CREATE TABLE us_census_data (
+  date DATE,
+  state VARCHAR(50),
+  county VARCHAR(50),
+  area INT,
+  prcp INT,
+  snow INT,
+  temp INT,
+  num_police INT,
+  male_population INT,
+  female_population INT,
+  avg_income INT,
+  white_male FLOAT,
+  white_female FLOAT,
+  black_male FLOAT,
+  black_female FLOAT, 
+  asian_male FLOAT, 
+  asian_female FLOAT, 
+  hispanic_male FLOAT, 
+  hispanic_female FLOAT, 
+  age0_4 FLOAT, 
+  age5_9 FLOAT, 
+  age10_14 FLOAT, 
+  age15_19 FLOAT, 
+  age20_24 FLOAT, 
+  age25_29 FLOAT, 
+  age30_34 FLOAT, 
+  age35_39 FLOAT, 
+  age40_44 FLOAT, 
+  age45_49 FLOAT,
+  age50_54 FLOAT, 
+  age55_59 FLOAT,  
+  age60_64 FLOAT, 
+  age65_69 FLOAT, 
+  age70_74 FLOAT, 
+  age75_79 FLOAT, 
+  age80_84 FLOAT, 
+  age85_plus FLOAT,
+  party_gop INT,
+  party_dem INT,
+  party_total INT 
+);
+
+CREATE TABLE us_population_change_data (
+  IBRC_Geo_ID INT,
+  statefips INT,
+  countyfips INT,
+  locality VARCHAR(50),
+  year INT,
+  births INT,
+  deaths INT,
+  net_international_migration INT,
+  net_domestic_migration INT,
+  residual INT
+);
