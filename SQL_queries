@@ -173,3 +173,12 @@ CREATE TABLE us_population_change_data (
   net_domestic_migration INT,
   residual INT
 );
+
+CREATE TABLE us_income_per_county_data (
+  location VARCHAR(50),
+  linecode INT,
+  unit VARCHAR(50),
+  year INT,
+  value BIGINT
+);
+
