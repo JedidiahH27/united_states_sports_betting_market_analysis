@@ -1,3 +1,5 @@
+# Setting up tables for importing data sets
+
 CREATE TABLE states (
     state_id INT PRIMARY KEY,
     state_name VARCHAR(50) NOT NULL UNIQUE
@@ -181,4 +183,86 @@ CREATE TABLE us_income_per_county_data (
   year INT,
   value BIGINT
 );
+
+CREATE TABLE states_abbreviation (
+    state_name VARCHAR(50) NOT NULL,
+    state_abbreviation VARCHAR(2) NOT NULL
+);
+
+INSERT INTO states_abbreviation (state_name, state_abbreviation) VALUES 
+('Alabama', 'AL'),
+('Alaska', 'AK'),
+('Arizona', 'AZ'),
+('Arkansas', 'AR'),
+('California', 'CA'),
+('Colorado', 'CO'),
+('Connecticut', 'CT'),
+('Delaware', 'DE'),
+('Florida', 'FL'),
+('Georgia', 'GA'),
+('Hawaii', 'HI'),
+('Idaho', 'ID'),
+('Illinois', 'IL'),
+('Indiana', 'IN'),
+('Iowa', 'IA'),
+('Kansas', 'KS'),
+('Kentucky', 'KY'),
+('Louisiana', 'LA'),
+('Maine', 'ME'),
+('Maryland', 'MD'),
+('Massachusetts', 'MA'),
+('Michigan', 'MI'),
+('Minnesota', 'MN'),
+('Mississippi', 'MS'),
+('Missouri', 'MO'),
+('Montana', 'MT'),
+('Nebraska', 'NE'),
+('Nevada', 'NV'),
+('New Hampshire', 'NH'),
+('New Jersey', 'NJ'),
+('New Mexico', 'NM'),
+('New York', 'NY'),
+('North Carolina', 'NC'),
+('North Dakota', 'ND'),
+('Ohio', 'OH'),
+('Oklahoma', 'OK'),
+('Oregon', 'OR'),
+('Pennsylvania', 'PA'),
+('Rhode Island', 'RI'),
+('South Carolina', 'SC'),
+('South Dakota', 'SD'),
+('Tennessee', 'TN'),
+('Texas', 'TX'),
+('Utah', 'UT'),
+('Vermont', 'VT'),
+('Virginia', 'VA'),
+('Washington', 'WA'),
+('West Virginia', 'WV'),
+('Wisconsin', 'WI'),
+('Wyoming', 'WY');
+
+# Queries for cleaning/wrangling data
+WITH cte AS (SELECT s.state_abbreviation, s.state_name, us.handle, us.revenue, us.taxes
+FROM states_abbreviation AS s
+LEFT JOIN us_sports_betting_per_state AS us ON  s.state_name = us.market),
+
+cte_2 AS (SELECT state_abbreviation, state_name, COALESCE(handle, 0) AS handle, COALESCE(revenue, 0) AS revenue, 
+COALESCE(taxes, 0) AS taxes
+FROM cte)
+
+SELECT state_abbreviation, state_name, CASE WHEN handle >= 1000000000 THEN CONCAT('$', ROUND(handle / 1000000000, 0), ' Billion')
+        									WHEN handle >= 1000000 THEN CONCAT('$', ROUND(handle / 1000000, 0), ' Million')
+        									ELSE CONCAT('$', handle)
+        									END AS handle,
+        								CASE WHEN revenue >= 1000000000 THEN CONCAT('$', ROUND(revenue / 1000000000, 0), ' Billion')
+        									WHEN revenue >= 1000000 THEN CONCAT('$', ROUND(revenue / 1000000, 0), ' Million')
+        									ELSE CONCAT('$', revenue)
+        									END AS revenue,
+        								CASE WHEN taxes >= 1000000000 THEN CONCAT('$', ROUND(taxes / 1000000000, 0), ' Billion')
+        									WHEN taxes >= 1000000 THEN CONCAT('$', ROUND(taxes / 1000000, 0), ' Million')
+        									ELSE CONCAT('$', taxes)
+        									END AS taxes			
+FROM cte_2;
+
+
 
