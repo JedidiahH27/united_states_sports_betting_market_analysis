@@ -241,6 +241,64 @@ INSERT INTO states_abbreviation (state_name, state_abbreviation) VALUES
 ('Wisconsin', 'WI'),
 ('Wyoming', 'WY');
 
+CREATE TABLE state_population (
+    state_abbreviation CHAR(2) PRIMARY KEY,
+    state_name VARCHAR(50) NOT NULL,
+    population INT NOT NULL
+);
+
+INSERT INTO state_population (state_abbreviation, state_name, population) VALUES
+('AL', 'Alabama', 5024279),
+('AK', 'Alaska', 731545),
+('AZ', 'Arizona', 7151502),
+('AR', 'Arkansas', 3011524),
+('CA', 'California', 39538223),
+('CO', 'Colorado', 5773714),
+('CT', 'Connecticut', 3605944),
+('DE', 'Delaware', 989948),
+('FL', 'Florida', 21538187),
+('GA', 'Georgia', 10711908),
+('HI', 'Hawaii', 1455271),
+('ID', 'Idaho', 1839106),
+('IL', 'Illinois', 12671821),
+('IN', 'Indiana', 6785528),
+('IA', 'Iowa', 3190369),
+('KS', 'Kansas', 2913314),
+('KY', 'Kentucky', 4505836),
+('LA', 'Louisiana', 4657757),
+('ME', 'Maine', 1362359),
+('MD', 'Maryland', 6177224),
+('MA', 'Massachusetts', 7029917),
+('MI', 'Michigan', 10077331),
+('MN', 'Minnesota', 5706494),
+('MS', 'Mississippi', 2961279),
+('MO', 'Missouri', 6154913),
+('MT', 'Montana', 1084225),
+('NE', 'Nebraska', 1961504),
+('NV', 'Nevada', 3104614),
+('NH', 'New Hampshire', 1377529),
+('NJ', 'New Jersey', 9280994),
+('NM', 'New Mexico', 2117522),
+('NY', 'New York', 20201249),
+('NC', 'North Carolina', 10439388),
+('ND', 'North Dakota', 779094),
+('OH', 'Ohio', 11799448),
+('OK', 'Oklahoma', 3963516),
+('OR', 'Oregon', 4237256),
+('PA', 'Pennsylvania', 13002700),
+('RI', 'Rhode Island', 1097379),
+('SC', 'South Carolina', 5118425),
+('SD', 'South Dakota', 886667),
+('TN', 'Tennessee', 6910840),
+('TX', 'Texas', 29145505),
+('UT', 'Utah', 3271616),
+('VT', 'Vermont', 643077),
+('VA', 'Virginia', 8631393),
+('WA', 'Washington', 7693612),
+('WV', 'West Virginia', 1793716),
+('WI', 'Wisconsin', 5893718),
+('WY', 'Wyoming', 576851);
+
 # Queries for cleaning/wrangling data
 WITH cte AS (SELECT s.state_abbreviation, s.state_name, us.handle, us.revenue, us.taxes
 FROM states_abbreviation AS s
