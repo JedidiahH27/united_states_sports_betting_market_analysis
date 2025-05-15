@@ -13,7 +13,7 @@ Investigate how macroeconomic variables—such as income levels, employment rate
 ### 🗺️ Conduct State-by-State Analysis
 Explore regional differences in betting activity to understand how demographics, legislation, and economic conditions affect participation across states.
 
-### 📂 Data Sources
+## 📂 Data Sources
 The analysis is grounded in rich, multi-dimensional data, including:
 
 ### 📅 Sports Betting Data
@@ -22,6 +22,6 @@ State-level and national time series data capturing monthly and yearly trends in
 ### 📊 Economic Indicators
 Key variables such as median household income, unemployment rates, and regional GDP to contextualize betting activity within broader economic conditions.
 
-### 🧠 Project Goal
+## 🧠 Project Goal
 By integrating sports betting metrics with economic data, this project aims to produce actionable insights that highlight growth areas, uncover hidden correlations, and support better decision-making in both public policy and private sector investments.
 
