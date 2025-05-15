@@ -1,15 +1,26 @@
-# Analysis of the United States Sports Betting Market
-## Overview
-This project aims to provide an in-depth analysis of the sports betting market in the United States. By examining various aspects of sports betting and related economic variables, we seek to uncover insights and trends that characterize the industry.
+📊 Analysis of the United States Sports Betting Market
+🔍 Overview
+This project provides a comprehensive analysis of the sports betting industry in the United States. By exploring data trends and economic factors, our goal is to reveal key insights that define the current landscape and future direction of this rapidly evolving market.
 
-## Objectives
-- Understand Market Trends: Analyze time series data on sports betting activity across different states and nationwide to identify patterns and trends.
-- Economic Impact: Assess the influence of economic variables on sports betting behavior and market dynamics.
-- State-by-State Analysis: Explore the variations in sports betting activity among different states to understand regional differences and influences.
+🎯 Objectives
+📈 Identify Market Trends
+Analyze time series data on sports betting activity across states and at the national level to uncover key patterns and seasonal dynamics.
 
-## Data
-The analysis is based on comprehensive data, including:
-- Sports Betting Data: Time series data detailing the volume and trends of sports betting activity across various states and the entire United States.
-- Economic Variables: Relevant economic indicators that may impact sports betting trends, such as income levels, employment rates, and economic growth metrics.
-By leveraging this data, we aim to gain valuable insights into the sports betting market and its relationship with broader economic factors.
+💵 Evaluate Economic Impact
+Investigate how macroeconomic variables—such as income levels, employment rates, and GDP growth—influence sports betting behavior and market performance.
+
+🗺️ Conduct State-by-State Analysis
+Explore regional differences in betting activity to understand how demographics, legislation, and economic conditions affect participation across states.
+
+📂 Data Sources
+The analysis is grounded in rich, multi-dimensional data, including:
+
+📅 Sports Betting Data
+State-level and national time series data capturing monthly and yearly trends in betting volume and revenue.
+
+📊 Economic Indicators
+Key variables such as median household income, unemployment rates, and regional GDP to contextualize betting activity within broader economic conditions.
+
+🧠 Project Goal
+By integrating sports betting metrics with economic data, this project aims to produce actionable insights that highlight growth areas, uncover hidden correlations, and support better decision-making in both public policy and private sector investments.
 
